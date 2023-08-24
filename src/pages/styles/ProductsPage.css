@@ -1,0 +1,66 @@
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.product-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 395px;
+    height: 500px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.product-card:not(:nth-child(3n)) {
+    margin-right: 150px; /* Aplica a margem direita apenas nos cards que não são o terceiro de cada linha */
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-card-content {
+    background-color: #FAFAF5;
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+    border: 2px solid #E6E6E6;
+}
+
+.product-card-content h3 {
+    margin: 10px 0;
+}
+
+.product-card-content p {
+    margin: 1px 0;
+}
+
+.products-title {
+    text-align: left;
+    margin-left: 200px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #000;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Newsreader, serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 76.8px */
+    letter-spacing: -1.28px;
+}
+
+.products-title::after {
+    content: "";
+    display: block;
+    width: calc(100% - 200px); /* A largura do container menos a margem esquerda do título */
+    height: 1px;
+    background-color: #e6e6e6;
+    margin-top: 15px;
+
+}
