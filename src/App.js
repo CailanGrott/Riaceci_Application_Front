@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +9,38 @@ import ProductsPage from './pages/ProductsPage';
 import './index.css';
 
 function App() {
+    const [cart, setCart] = useState([]);
+
+    useEffect(() => {
+        const storedCart = localStorage.getItem('cart');
+        if (storedCart) {
+            setCart(JSON.parse(storedCart));
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
+
+    const addToCart = (product) => {
+        const existingProduct = cart.find(item => item.id === product.id);
+        if (!existingProduct) {
+            setCart([...cart, { ...product, quantity: 1 }]);
+        }
+    };
+
+    const removeFromCart = (productId) => {
+        const newCart = cart.filter(item => item.id !== productId);
+        setCart(newCart);
+    };
+
+    const updateProductQuantity = (productId, quantity) => {
+        const newCart = cart.map(item =>
+            item.id === productId ? { ...item, quantity } : item
+        );
+        setCart(newCart);
+    };
+
     return (
         <Router>
             <header>
@@ -23,16 +55,17 @@ function App() {
                     <Link to="/products">Products</Link>
                     <Link to="/about">About</Link>
                     <Link to="/cart" className="logo-carrinho">
-                        <FontAwesomeIcon icon={faShoppingCart}/>
+                        Carrinho
+                        {cart.length > 0 && <span className="cart-count">({cart.length})</span>}
                     </Link>
                 </nav>
             </header>
 
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/products" element={<ProductsPage />} />
+                <Route path="/products" element={<ProductsPage addToCart={addToCart} />} />
                 <Route path="/about" element={<AboutPage />} />
-                <Route path="/cart" element={<CartPage />} />
+                <Route path="/cart" element={<CartPage cart={cart} removeFromCart={removeFromCart} updateProductQuantity={updateProductQuantity} />} />
             </Routes>
         </Router>
     );

@@ -1,0 +1,111 @@
+.body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.order-title{
+    width: 80%;
+}
+
+.order-title h1 {
+    text-align: start;
+    color: #000;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Newsreader, serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -1.28px;
+}
+
+.order-title::after {
+    content: "";
+    display: block;
+    width: calc(100% - 200px);
+    height: 1px;
+    background-color: #e6e6e6;
+    margin-top: 15px;
+}
+
+.container-detalhes{
+    width: 1500px;
+    height: 800px;
+    display: flex;
+}
+
+.aba-produto {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FAFAF5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    width: 70%;
+}
+.resumo-pedido{
+    float: right;
+    width: 30%;
+    background: deeppink;
+}
+
+.imagem-produto-pedido {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.imagem-produto-pedido img {
+    margin-right: 20px;
+    width: auto;
+    max-height: 120px;
+    object-fit: cover;
+}
+
+.product-info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h2 {
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    margin: 0 0 10px 0;
+    font-weight: 500;
+}
+
+input[type="number"] {
+    width: 50px;
+    margin-top: 0;
+}
+
+.total-price {
+    flex: 1;
+    text-align: right;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+button {
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 15px;
+}
+
+button:hover {
+    background-color: #e43333;
+}

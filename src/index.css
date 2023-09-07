@@ -15,10 +15,10 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    margin-right: auto;  /* empurra os itens restantes para a direita */
+    margin-right: auto; /* empurra os itens restantes para a direita */
 }
 
-.logo h1{
+.logo h1 {
     font-size: 2.5vw;
     color: #000;
     font-feature-settings: 'clig' off, 'liga' off;
@@ -51,17 +51,20 @@ nav a svg {
     margin-right: 5px;
 }
 
-/*.logo-carrinho{*/
-/*    padding: 8px;*/
-/*    justify-content: center;*/
-/*    background: #C03333;*/
-/*    border-radius: 60%;*/
-/*}*/
+.logo-carrinho {
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Para remover qualquer sublinhado do link */
+}
 
-/*.logo-carrinho:hover{*/
-/*    background: blue;*/
-/*}*/
+.cart-count {
+    margin-left: 5px;
+}
 
-nav a:hover {
+nav a:hover, .logo-carrinho:hover {
     text-decoration: underline;
 }
