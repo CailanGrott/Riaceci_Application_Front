@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import CartPage from './pages/CartPage';
@@ -25,7 +23,7 @@ function App() {
     const addToCart = (product) => {
         const existingProduct = cart.find(item => item.id === product.id);
         if (!existingProduct) {
-            setCart([...cart, { ...product, quantity: 1 }]);
+            setCart([...cart, {...product, quantity: 1}]);
         }
     };
 
@@ -36,7 +34,7 @@ function App() {
 
     const updateProductQuantity = (productId, quantity) => {
         const newCart = cart.map(item =>
-            item.id === productId ? { ...item, quantity } : item
+            item.id === productId ? {...item, quantity} : item
         );
         setCart(newCart);
     };
@@ -62,10 +60,11 @@ function App() {
             </header>
 
             <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/products" element={<ProductsPage addToCart={addToCart} />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/cart" element={<CartPage cart={cart} removeFromCart={removeFromCart} updateProductQuantity={updateProductQuantity} />} />
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/products" element={<ProductsPage addToCart={addToCart}/>}/>
+                <Route path="/about" element={<AboutPage/>}/>
+                <Route path="/cart" element={<CartPage cart={cart} removeFromCart={removeFromCart}
+                                                       updateProductQuantity={updateProductQuantity}/>}/>
             </Routes>
         </Router>
     );

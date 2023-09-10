@@ -3,7 +3,7 @@ import './styles/ProductsPage.css';
 
 const ProductsPage = ({ addToCart }) => {
     const [products, setProducts] = useState([]);
-    const [flashingProductId, setFlashingProductId] = useState(null); // 1. Adicionando estado
+    const [flashingProductId, setFlashingProductId] = useState(null);
 
     useEffect(() => {
         fetch('http://localhost:8080/products')
@@ -13,8 +13,8 @@ const ProductsPage = ({ addToCart }) => {
 
     const handleAddToCart = (product) => {
         addToCart(product);
-        setFlashingProductId(product.id); // 2. Definindo o produto que está piscando
-        setTimeout(() => setFlashingProductId(null), 1000); // Remove após 1 segundo
+        setFlashingProductId(product.id);
+        setTimeout(() => setFlashingProductId(null), 1000);
     };
 
     return (
@@ -36,9 +36,11 @@ const ProductsPage = ({ addToCart }) => {
                     >
                         <img src={product.image} alt={product.name} />
                         <div className="product-card-content">
-                            <h3>{product.name}</h3>
-                            <p>${product.price.toFixed(2)}</p>
-                            <p>{product.description}</p>
+                            <div className="product-info">
+                                <h3>{product.name}</h3>
+                                <p className="product-price">${product.price.toFixed(2)}</p>
+                            </div>
+                            <p className="product-description">{product.description}</p>
                         </div>
                     </div>
                 ))}

@@ -1,8 +1,7 @@
-
 .products-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     max-width: 1600px;
     margin: 0 auto;
 }
@@ -15,27 +14,12 @@
     margin-bottom: 40px;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
-}
-
-.product-card.clicked {
-    animation: blinker 1s linear;
-    box-shadow: 0 0 5px red;
-}
-
-@keyframes blinker {
-    0% {
-        background-color: transparent;
-    }
-    50% {
-        background-color: red;
-    }
-    100% {
-        background-color: transparent;
-    }
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card:not(:nth-child(3n)) {
-    margin-right: 150px; /* Aplica a margem direita apenas nos cards que não são o terceiro de cada linha */
+    margin-right: 150px;
 }
 
 .product-card img {
@@ -47,45 +31,57 @@
 .product-card-content {
     background-color: #FAFAF5;
     padding: 15px;
-    border-radius: 0 0 10px 10px;
-    border: 2px solid #E6E6E6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 150px);
+    overflow-y: auto;
 }
 
-.product-card-content h3 {
-    margin: 10px 0;
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.product-card-content p {
-    margin: 1px 0;
+.product-info h3, .product-info .product-price {
+    margin: 0;
+}
+
+.product-price {
+    color: red;
+}
+
+.product-description {
+    margin-top: auto;
+    margin-bottom: 10px;
 }
 
 .products-title {
     text-align: left;
-    margin-left: 200px;
+    margin-left: 150px;
     margin-top: 30px;
     margin-bottom: 30px;
     color: #000;
-    font-feature-settings: 'clig' off, 'liga' off;
     font-family: Newsreader, serif;
     font-size: 64px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 120%; /* 76.8px */
+    line-height: 120%;
     letter-spacing: -1.28px;
 }
 
 .products-title::after {
     content: "";
     display: block;
-    width: calc(100% - 200px); /* A largura do container menos a margem esquerda do título */
+    width: calc(100% - 150px);
     height: 1px;
     background-color: #e6e6e6;
     margin-top: 15px;
-
 }
 
-.product-card-content.clicked {
+.product-card.clicked {
     animation: blinker 1s linear;
+    box-shadow: 0 0 5px red;
 }
 
 @keyframes blinker {
