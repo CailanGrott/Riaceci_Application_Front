@@ -5,7 +5,7 @@
     margin-bottom: 30px;
     color: #000;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Newsreader, serif;
+    font-family: 'Inter', sans-serif;
     font-size: 64px;
     font-style: normal;
     font-weight: 400;
@@ -20,4 +20,148 @@
     height: 1px;
     background-color: #e6e6e6;
     margin-top: 15px;
+}
+
+.color-area {
+    width: calc(100% - 150px);
+    height: 400px; /* ou qualquer altura que você deseja */
+    position: relative;
+    margin-left: 150px;
+    display: flex; /* Adicionado para permitir a flexibilidade de layout */
+}
+
+.blank-card {
+    width: 32%; /* Ajustado para 40% para atingir a proporção desejada */
+    height: 100%; /* para ocupar toda a altura da área colorida */
+    background-color: #FAFAF5;
+    border: 1px solid #ccc; /* para delinear o cartão */
+    border-radius: 8px; /* para ter cantos arredondados */
+    order: 2; /* Adicionado para definir a ordem de apresentação */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Adicionado para alinhar o botão ao fundo */
+}
+
+.cart-items-container {
+    width: 57%; /* Ajustado para 60% para atingir a proporção desejada */
+    display: flex;
+    flex-direction: column;
+    margin-right: 33px;
+    gap: 30px;
+    order: 1; /* Adicionado para definir a ordem de apresentação */
+}
+
+.cart-product-card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #FAFAF5;
+    display: flex; /* Adicionado para facilitar o alinhamento dos itens */
+}
+
+.cart-product-image {
+    border-radius: 0 20px 20px 0; /* Ajustado para criar um efeito de "D" correto */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 30px; /* Adicionado para criar algum espaço entre a imagem e os detalhes */
+}
+
+.cart-product-details {
+    flex: 1; /* Isso permite que o container cresça e ocupe o espaço restante */
+    display: flex; /* Adicionado para permitir o layout flexível */
+    flex-direction: column; /* Adicionado para organizar os itens em uma coluna */
+    justify-content: space-between; /* Adicionado para criar espaço entre os itens */
+    position: relative; /* Isso permite que possamos posicionar o ícone de lixeira relativo a este div */
+}
+
+.cart-product-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-product-name {
+    margin: 0;
+}
+
+.cart-product-total {
+    margin: 0; /* Mantido para evitar margens padrão */
+    align-self: flex-end; /* Adicionado para alinhar à direita */
+}
+
+.cart-product-unit-price {
+    margin: 0; /* Removido margem superior */
+}
+
+.cart-product-quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adicionado para criar algum espaço entre o texto e o input */
+}
+
+.cart-product-quantity-control input {
+    width: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none; /* Removido para desativar o spinner de número */
+    -moz-appearance: textfield; /* Necessário para Firefox */
+}
+
+.cart-product-remove {
+    position: absolute;
+    bottom: 20px; /* Ajuste conforme necessário */
+    right: 20px; /* Ajuste conforme necessário */
+    cursor: pointer; /* Muda o cursor para um ponteiro para indicar que é clicável */
+}
+
+.summary-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold; /* Fazendo o texto ficar em negrito */
+}
+
+.summary-title, .summary-item {
+    font-family: 'Inter', sans-serif; /* Definindo a fonte para Inter */
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-container {
+    margin: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary-item-label {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.summary-item-value {
+    font-size: 20px;
+    font-weight: bold; /* Fazendo o texto ficar em negrito */
+}
+
+.button-container {
+    padding: 0 20px 20px;
+}
+
+.confirm-button {
+    background-color: #C03333;
+    color: #FFF;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    width: calc(100% - 40px); /* Ajustado para considerar a margem */
+    margin: 20px; /* Adicionada margem nas laterais e no topo */
+    border-radius: 8px; /* Arredondamento uniforme das bordas */
+    font-family: 'Inter', sans-serif;
 }

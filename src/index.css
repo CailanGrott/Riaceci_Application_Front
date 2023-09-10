@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #fff;
@@ -10,12 +10,12 @@ header {
     align-items: center;
     padding: 10px 20px;
     color: black;
-    justify-content: space-between;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    margin-right: auto; /* empurra os itens restantes para a direita */
     margin-left: 60px;
 }
 
@@ -23,10 +23,10 @@ header {
     font-size: 2.5vw;
     color: #000;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Inter, serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
-    line-height: 100%;
+    line-height: 100%; /* 40px */
     letter-spacing: -0.4px;
 }
 
@@ -45,16 +45,22 @@ nav a {
     margin-left: 2vw;
     color: black;
     text-decoration: none;
+    margin-right: 30px;
+}
+
+nav a svg {
+    margin-right: 5px;
 }
 
 .logo-carrinho {
-    background-color: red;
-    padding: 5px 10px;
+    font-family: 'Inter', sans-serif;
+    background-color: #C03333;
+    padding: 15px 18px;
     border-radius: 5px;
     color: white;
     display: flex;
     align-items: center;
-    text-decoration: none;
+    margin-right: 100px;
 }
 
 .cart-count {
@@ -63,28 +69,4 @@ nav a {
 
 nav a:hover, .logo-carrinho:hover {
     text-decoration: underline;
-}
-
-.page-title {
-    text-align: left;
-    margin-left: 150px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    color: #000;
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Newsreader, serif;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%;
-    letter-spacing: -1.28px;
-}
-
-.page-title::after {
-    content: "";
-    display: block;
-    width: calc(100% - 150px);
-    height: 1px;
-    background-color: #e6e6e6;
-    margin-top: 15px;
 }

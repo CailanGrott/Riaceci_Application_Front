@@ -23,7 +23,7 @@ function App() {
     const addToCart = (product) => {
         const existingProduct = cart.find(item => item.id === product.id);
         if (!existingProduct) {
-            setCart([...cart, {...product, quantity: 1}]);
+            setCart([...cart, { ...product, quantity: 1 }]);
         }
     };
 
@@ -34,7 +34,7 @@ function App() {
 
     const updateProductQuantity = (productId, quantity) => {
         const newCart = cart.map(item =>
-            item.id === productId ? {...item, quantity} : item
+            item.id === productId ? { ...item, quantity } : item
         );
         setCart(newCart);
     };
@@ -50,8 +50,8 @@ function App() {
                 </div>
                 <nav>
                     <Link to="/">Home</Link>
-                    <Link to="/products">Products</Link>
-                    <Link to="/about">About</Link>
+                    <Link to="/products">Produtos</Link>
+                    <Link to="/about">Quem somos</Link>
                     <Link to="/cart" className="logo-carrinho">
                         Carrinho
                         {cart.length > 0 && <span className="cart-count">({cart.length})</span>}
@@ -60,11 +60,10 @@ function App() {
             </header>
 
             <Routes>
-                <Route path="/" element={<HomePage/>}/>
-                <Route path="/products" element={<ProductsPage addToCart={addToCart}/>}/>
-                <Route path="/about" element={<AboutPage/>}/>
-                <Route path="/cart" element={<CartPage cart={cart} removeFromCart={removeFromCart}
-                                                       updateProductQuantity={updateProductQuantity}/>}/>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/products" element={<ProductsPage addToCart={addToCart} />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/cart" element={<CartPage cart={cart} removeFromCart={removeFromCart} updateProductQuantity={updateProductQuantity} />} />
             </Routes>
         </Router>
     );

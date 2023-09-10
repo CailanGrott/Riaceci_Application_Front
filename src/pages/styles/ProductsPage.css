@@ -1,69 +1,10 @@
-.products-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.product-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 395px;
-    height: 500px;
-    margin-bottom: 40px;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.product-card:not(:nth-child(3n)) {
-    margin-right: 150px;
-}
-
-.product-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.product-card-content {
-    background-color: #FAFAF5;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: calc(100% - 150px);
-    overflow-y: auto;
-}
-
-.product-info {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.product-info h3, .product-info .product-price {
-    margin: 0;
-}
-
-.product-price {
-    color: red;
-}
-
-.product-description {
-    margin-top: auto;
-    margin-bottom: 10px;
-}
-
 .products-title {
+    font-family: 'Inter', sans-serif;
     text-align: left;
     margin-left: 150px;
     margin-top: 30px;
     margin-bottom: 30px;
     color: #000;
-    font-family: Newsreader, serif;
     font-size: 64px;
     font-weight: 400;
     line-height: 120%;
@@ -79,19 +20,71 @@
     margin-top: 15px;
 }
 
-.product-card.clicked {
-    animation: blinker 1s linear;
-    box-shadow: 0 0 5px red;
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 93px; /* Aumente o valor do gap para aumentar o espaço entre os cards */
+    justify-content: flex-start;
+    padding: 0 150px;
 }
 
-@keyframes blinker {
-    0% {
-        background-color: transparent;
+.product-card {
+    width: calc(30% - 14px);
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fafaf5;
+    transition: transform 0.3s;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 0; /* removendo padding */
+}
+
+
+.product-card:hover {
+    transform: scale(1.02);
+}
+
+.product-image {
+    width: 100%;
+    height: auto; /* mantenha auto para preservar a proporção da imagem */
+    display: block;
+    margin: 0; /* removendo margens */
+    padding: 0; /* removendo padding */
+    border-bottom: 1px solid #E6E6E6; /* opcional: uma borda para separar a imagem do texto */
+    object-fit: cover; /* garante que a imagem cubra toda a área sem distorção */
+}
+
+.product-text {
+    padding: 10px;
+}
+
+.product-name {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.product-price {
+    color: #C03333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.product-description {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.flashing {
+    animation: flash 1s forwards;
+}
+
+@keyframes flash {
+    0%, 100% {
+        background-color: #fff;
     }
     50% {
-        background-color: red;
-    }
-    100% {
-        background-color: transparent;
+        background-color: #dadada;
     }
 }

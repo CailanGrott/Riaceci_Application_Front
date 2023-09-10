@@ -20,26 +20,17 @@ const ProductsPage = ({ addToCart }) => {
     return (
         <div>
             <h1 className="products-title">Produtos</h1>
-            <div className="products-container">
-                {products.map(product => (
+            <div className="products-grid">
+                {products.map((product) => (
                     <div
                         key={product.id}
-                        className={`product-card ${flashingProductId === product.id ? 'clicked' : ''}`}
+                        className={`product-card ${flashingProductId === product.id ? 'flashing' : ''}`}
                         onClick={() => handleAddToCart(product)}
-                        role="button"
-                        tabIndex="0"
-                        onKeyPress={(event) => {
-                            if (event.key === 'Enter') {
-                                handleAddToCart(product);
-                            }
-                        }}
                     >
-                        <img src={product.image} alt={product.name} />
-                        <div className="product-card-content">
-                            <div className="product-info">
-                                <h3>{product.name}</h3>
-                                <p className="product-price">${product.price.toFixed(2)}</p>
-                            </div>
+                        <img src={product.image} alt={product.name} className="product-image" />
+                        <div className="product-text">
+                            <h2 className="product-name">{product.name}</h2>
+                            <p className="product-price">R$ {product.price.toFixed(2)}</p>
                             <p className="product-description">{product.description}</p>
                         </div>
                     </div>

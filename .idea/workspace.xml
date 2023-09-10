@@ -6,12 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="6ed6dd6e-38e8-4db0-819e-6472639807bf" name="Changes" comment="Adicionando pedido">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dev/previews.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/previews.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/CartPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CartPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/LoginPage.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ProductsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/RegisterPage.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/styles/CartPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/styles/CartPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/styles/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/styles/HomePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/styles/LoginPage.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/styles/ProductsPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/styles/ProductsPage.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +146,8 @@
       <workItem from="1693429856889" duration="1571000" />
       <workItem from="1694039509220" duration="6960000" />
       <workItem from="1694051584393" duration="448000" />
-      <workItem from="1694055900074" duration="13209000" />
+      <workItem from="1694055900074" duration="22419000" />
+      <workItem from="1694371688311" duration="2671000" />
     </task>
     <task id="LOCAL-00001" summary="Adicionando front">
       <option name="closed" value="true" />
@@ -174,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694048599288</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Adicionando pedido">
+      <option name="closed" value="true" />
+      <created>1694307481304</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694307481304</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
