@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage';
 import CartPage from './pages/CartPage';
 import ProductsPage from './pages/ProductsPage';
 import './index.css';
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
     const [cart, setCart] = useState([]);
@@ -52,6 +53,7 @@ function App() {
                     <Link to="/">Home</Link>
                     <Link to="/products">Produtos</Link>
                     <Link to="/about">Quem somos</Link>
+                    <Link to="/profile">Meu Perfil</Link>
                     <Link to="/cart" className="logo-carrinho">
                         Carrinho
                         {cart.length > 0 && <span className="cart-count">({cart.length})</span>}
@@ -63,6 +65,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/products" element={<ProductsPage addToCart={addToCart} />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/cart" element={<CartPage cart={cart} removeFromCart={removeFromCart} updateProductQuantity={updateProductQuantity} />} />
             </Routes>
         </Router>

@@ -16,7 +16,7 @@
 .order-title::after {
     content: "";
     display: block;
-    width: calc(100% - 150px); /* A largura do container menos a margem esquerda do título */
+    width: calc(100% - 165px); /* A largura do container menos a margem esquerda do título */
     height: 1px;
     background-color: #e6e6e6;
     margin-top: 15px;
@@ -31,7 +31,7 @@
 }
 
 .blank-card {
-    width: 32%; /* Ajustado para 40% para atingir a proporção desejada */
+    width: 31%; /* Ajustado para 40% para atingir a proporção desejada */
     height: 100%; /* para ocupar toda a altura da área colorida */
     background-color: #FAFAF5;
     border: 1px solid #ccc; /* para delinear o cartão */
