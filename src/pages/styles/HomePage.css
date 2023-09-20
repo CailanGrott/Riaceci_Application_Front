@@ -1,1 +1,110 @@
+.about-container {
+    padding: 20px;
+    border-radius: 8px;
+}
 
+.industry-section,
+.recipes-section {
+    margin-bottom: 20px;
+}
+
+.recipes-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.recipes-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.industry-title {
+    font-size: 72px;
+    margin-bottom: 100px;
+    text-align: center;
+    font-family: 'Newsreader', serif; /* Aplicando a fonte Newsreader */
+    font-weight: 1;
+}
+
+
+.industry-description,
+.recipes-description {
+    font-size: 20px;
+    margin-bottom: 20px; /* Aumentando o espaçamento entre as linhas de texto */
+    text-align: center;
+    line-height: 1.6; /* Aumentando o espaçamento entre as linhas do parágrafo */
+}
+
+.recipes-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-right: 100px; /* adicionando uma margem à direita para dar algum espaço entre o título e a descrição */
+    margin-top: 50px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.photos-section {
+    display: flex;
+    justify-content: space-between; /* Ajustando para aumentar o espaço entre as fotos */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.photo-vertical {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    margin-left: 350px; /* Ajustando para mover mais para a esquerda */
+}
+
+.photo-horizontal {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    margin-right: 350px; /* Ajustando para mover mais para a direita */
+}
+
+.photo-vertical img,
+.photo-horizontal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-caption {
+    margin-top: 10px; /* Adicionando um espaço acima da legenda */
+    font-size: 14px; /* Definindo o tamanho da fonte da legenda */
+    text-align: left; /* Centralizando a legenda */
+}
+
+.shop-link {
+    text-decoration: none;
+}
+
+.shop-button {
+    padding: 15px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 100px auto;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    background: #C03333;
+    color: #FAFAF5;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.recipes-description {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: left; /* Alinhando o texto à esquerda */
+    margin-top: 45px;
+}

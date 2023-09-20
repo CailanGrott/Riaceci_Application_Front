@@ -6,7 +6,8 @@ const ProductsPage = ({ addToCart }) => {
     const [flashingProductId, setFlashingProductId] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8080/products')
+        const token = localStorage.getItem('token');
+        fetch('http://localhost:8080/products/find-products')
             .then(response => response.json())
             .then(data => setProducts(data));
     }, []);
