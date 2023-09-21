@@ -1,17 +1,42 @@
-import axios from "axios";
+import { useAuth } from "./AuthContext";
+import { useState } from "react";
+import './styles/Login.css';
 
-export const Auth = ({onSucesso}) => {
-    const handle = async (login, senha) => {
-        const {data} = await axios.post('http://localhost:8080/auth/login', {login, senha});
-        //     se sucesso
-        localStorage.setItem('token', data)
-        onSucesso()
-    }
+function Login() {
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
+    const { handleLogin } = useAuth();
+    const [errorMessage, setErrorMessage] = useState('');
 
+    const handleInputChange = () => {
+        setErrorMessage('');
+    };
 
-    return <div>
-        <input type="text"/>
-        <input type="password"/>
-        <button onClick={handle}>ok</button>
-    </div>
+    return (
+        <div className="login-container">
+            <div className="login-form">
+                <input
+                    type="text"
+                    placeholder="Username"
+                    onChange={(e) => {
+                        setLogin(e.target.value);
+                        handleInputChange();
+                    }}
+                />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    onChange={(e) => {
+                        setPassword(e.target.value);
+                        handleInputChange();
+                    }}
+                />
+                <button onClick={() => handleLogin(login, password)}>
+                    ok
+                </button>
+            </div>
+        </div>
+    );
 }
+
+export default Login;

@@ -23,10 +23,10 @@ function HomePage() {
 
             <div className="photos-section">
                 <div className="photo photo-vertical">
-                    <img src="https://riaceci.s3.sa-east-1.amazonaws.com/pizza_alpino.png" alt="FOTO1"/>
+                    <img src="https://riaceci.s3.sa-east-1.amazonaws.com/apresentacao_comercial_riaceci/pizza_alpino_ambiente.png" alt="FOTO1"/>
                 </div>
                 <div className="photo photo-horizontal">
-                    <img src="https://riaceci.s3.sa-east-1.amazonaws.com/pizza_prestigio.png" alt="FOTO2"/>
+                    <img src="https://riaceci.s3.sa-east-1.amazonaws.com/apresentacao_comercial_riaceci/pizza_pretigio_ambiente.png" alt="FOTO2"/>
                     <div className="photo-caption">Central California — The person who grew these was located in Central
                         California and, er, hopefully very well-compensated.
                     </div>

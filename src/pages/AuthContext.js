@@ -6,14 +6,19 @@ import axios from 'axios';
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({children}) => {
-    const [roles, setRole] = useState([]);
+    const [customerId, setCustomerId] = useState('');
+    const [userId, setUserId] = useState('');
+    const [login, setLogin] = useState('');
+    const [cnpj, setCnpj] = useState('');
+    const [role, setRole] = useState('');
     const navigate = useNavigate();
 
-    const handleLogin = async (login, senha) => {
-        const response = await axios.post('http://localhost:8080/auth/login', {login, senha});
-
+    const handleLogin = async (login, password) => {
+        const response = await axios.post('http://localhost:8080/auth/login', {login, password});
+        console.log(`login: ${login}`);
+        console.log(`password: ${password}`);
         const statusCode = response.status;
-        const responseData = response.data;
+        const responseData = response.data.token;
 
         console.log(`Status Code: ${statusCode}`);
 
@@ -22,21 +27,27 @@ export const AuthProvider = ({children}) => {
             localStorage.setItem('token', responseData);
             const decodedToken = jwtDecode(responseData);
 
-            if (decodedToken && decodedToken.CARGOS) {
-                console.log(decodedToken.CARGOS);
-                setRole(decodedToken.CARGOS);
-                localStorage.setItem('role', decodedToken.CARGOS)
-                localStorage.setItem('sub', decodedToken.sub)
-                localStorage.setItem('nome', decodedToken.Nome)
+            if (decodedToken && decodedToken.role) {
+                setUserId(decodedToken.userId)
+                setLogin(decodedToken.login)
+                setCustomerId(decodedToken.customerId)
+                setCnpj(decodedToken.cnpj)
+                setRole(decodedToken.role);
 
-                navigate('/inicio');
+                localStorage.setItem('userId', decodedToken.userId)
+                localStorage.setItem('login', decodedToken.login)
+                localStorage.setItem('customerId', decodedToken.customerId)
+                localStorage.setItem('cnpj', decodedToken.cnpj)
+                localStorage.setItem('role', decodedToken.role)
+
+                navigate('/home');
             }
         }
     };
 
 
     return (
-        <AuthContext.Provider value={{roles, handleLogin}}>
+        <AuthContext.Provider value={{handleLogin, customerId}}>
             {children}
         </AuthContext.Provider>
     );
