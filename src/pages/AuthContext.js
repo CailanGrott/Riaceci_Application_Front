@@ -45,9 +45,28 @@ export const AuthProvider = ({children}) => {
         }
     };
 
+    const handleRegister = async (name, cnpj, email, password, customerType) => {
+        try {
+            const response = await axios.post('http://localhost:8080/customer/new-customer', {
+                name,
+                cnpj,
+                email,
+                password,
+                customerType
+            });
+
+            const statusCode = response.status;
+
+            if (statusCode === 201) {
+                await handleLogin(cnpj, password);
+            }
+        } catch (error) {
+            console.error("Erro ao registrar:", error);
+        }
+    };
 
     return (
-        <AuthContext.Provider value={{handleLogin, customerId}}>
+        <AuthContext.Provider value={{handleLogin, handleRegister, customerId}}>
             {children}
         </AuthContext.Provider>
     );

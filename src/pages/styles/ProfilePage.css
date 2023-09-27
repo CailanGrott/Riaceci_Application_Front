@@ -1,36 +1,101 @@
-.profile-container {
-    max-width: 300px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-top: 50px;
-}
-
 .profile-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #000;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 76.8px */
+    letter-spacing: -1.28px;
 }
 
-.profile-detail {
-    font-size: 18px;
+.profile-title::after {
+    content: "";
+    display: block;
+    width: calc(100% - 165px); /* A largura do container menos a margem esquerda do título */
+    height: 1px;
+    background-color: #e6e6e6;
+    margin-top: 15px;
+}
+
+/* Seção de Busca */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #C03333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6c6c6c;
+}
+
+/* Estilos para a exibição dos dados */
+h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center; /* Centralizado */
+}
+
+p {
     margin-bottom: 10px;
 }
 
-.logout-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #28a745;
-    cursor: pointer;
+/* Estilo adicional para separar os botões de busca */
+button:not(:last-child) {
+    margin-right: 10px;
 }
 
-.logout-button:hover {
-    background-color: #218838;
+/* Estilo para a seção de pedidos do cliente */
+.orders-container {
+    width: 70%; /* Ocupa 70% da largura do container */
+    margin: 30px auto 0; /* Centraliza horizontalmente e dá uma margem em cima */
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #FAFAF5; /* Uma cor de fundo suave */
+}
+
+.orders-container h2 {
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 10px;
+}
+
+.customer-section {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.customer-data {
+    width: 28%; /* 100% - 2% de espaçamento entre as divs */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    flex-shrink: 0; /* Isso evita que o customer-data diminua quando o customer-orders expandir */
+    height: 200px; /* Define uma altura mínima para o customer-data */
+}
+
+.customer-orders {
+    width: 70%; /* 100% - 2% de espaçamento entre as divs */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    flex-grow: 1; /* Isso permite que o customer-orders expanda conforme necessário */
 }

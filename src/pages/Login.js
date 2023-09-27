@@ -1,12 +1,15 @@
 import { useAuth } from "./AuthContext";
 import { useState } from "react";
 import './styles/Login.css';
+import {useNavigate} from "react-router-dom";
 
 function Login() {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const { handleLogin } = useAuth();
     const [errorMessage, setErrorMessage] = useState('');
+
+    const navigate = useNavigate();
 
     const handleInputChange = () => {
         setErrorMessage('');
@@ -33,6 +36,9 @@ function Login() {
                 />
                 <button onClick={() => handleLogin(login, password)}>
                     ok
+                </button>
+                <button onClick={() => navigate('/register')}>
+                    Register
                 </button>
             </div>
         </div>

@@ -8,12 +8,13 @@ import './index.css';
 import ProfilePage from "./pages/ProfilePage";
 import Login from "./pages/Login";
 import {AuthProvider} from "./pages/AuthContext";
+import Register from "./pages/Register";
 
 function App() {
     const [cart, setCart] = useState([]);
 
     function clearCart() {
-        setCart([]); // Essencialmente resetando o carrinho para vazio
+        setCart([]);
     }
 
     useEffect(() => {
@@ -46,11 +47,11 @@ function App() {
         setCart(newCart);
     };
 
-    const location = useLocation(); // Obter a rota atual
+    const location = useLocation();
 
     return (
         <>
-            {location.pathname !== "/" && (
+            {location.pathname !== "/" && location.pathname !== "/register" && (
                 <>
                     <header>
                         <div className="logo">
@@ -83,6 +84,7 @@ function App() {
             <AuthProvider>
                 <Routes>
                     <Route path="/" element={<Login/>} exact/>
+                    <Route path="/register" element={<Register/>} exact/>
                     <Route path="/home" element={<HomePage/>}/>
                     <Route path="/products" element={<ProductsPage addToCart={addToCart}/>}/>
                     <Route path="/about" element={<AboutPage/>}/>
