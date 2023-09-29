@@ -65,8 +65,28 @@ export const AuthProvider = ({children}) => {
         }
     };
 
+    const handleRegisterEmployee = async (login, password, role) => {
+        try {
+            const response = await axios.post('http://localhost:8080/auth/register', {
+                login,
+                password,
+                role
+            });
+
+            const statusCode = response.status;
+
+            if (statusCode === 200) {
+                alert('Funcionário registrado com sucesso!');
+            } else {
+                alert('Falha ao registrar o funcionário.');
+            }
+        } catch (error) {
+            console.error("Erro ao registrar funcionário:", error);
+        }
+    };
+
     return (
-        <AuthContext.Provider value={{handleLogin, handleRegister, customerId}}>
+        <AuthContext.Provider value={{handleLogin, handleRegister, handleRegisterEmployee, customerId}}>
             {children}
         </AuthContext.Provider>
     );

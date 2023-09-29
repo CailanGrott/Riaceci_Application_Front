@@ -3,6 +3,7 @@ import LogoutService from "../LogoutService";
 import CollapsibleOrder from "../CollapsibleOrder";
 import axios from "axios";
 import './styles/ProfilePage.css'
+import {useNavigate} from 'react-router-dom';
 
 const USER_ROLES = {
     ADMIN: "ADMIN",
@@ -12,7 +13,7 @@ const USER_ROLES = {
 
 function ProfilePage() {
     const {role, cnpj} = localStorage;
-
+    const navigate = useNavigate();
     const [cnpjSearch, setCnpjSearch] = useState('');
     const [orderData, setOrderData] = useState(null);
     const [customerData, setCustomerData] = useState(null);
@@ -86,8 +87,9 @@ function ProfilePage() {
     return (
         <div>
             <h1 className="profile-title">Perfil</h1>
-            <p>Role: {role}</p>
-
+            {role === USER_ROLES.ADMIN && (
+                <button onClick={() => navigate('/registerEmployee')}>Registrar Funcionário</button>
+            )}
             {(role === USER_ROLES.ADMIN || role === USER_ROLES.FUNCTIONARY) && (
                 <div>
                     <input
@@ -98,6 +100,8 @@ function ProfilePage() {
                     />
                     <button onClick={handleSearchOrder}>Buscar Pedido</button>
                     <button onClick={handleSearchCustomer}>Buscar Cliente</button>
+                    <button onClick={handleLogout}>Logout</button>
+                    <button onClick={() => navigate('/register-product')}>Registrar Produto</button>
 
                     {showData === 'order' && orderData && (
                         <div>
@@ -124,25 +128,24 @@ function ProfilePage() {
             {role === USER_ROLES.CUSTOMER && (
                 <div className="customer-section">
                     <div className="customer-data">
-                        <h2>Meus Dados</h2>
+                        <h2 className="meus-dados">Meus Dados</h2>
                         {customerData && (
                             <>
                                 <p>CNPJ: {customerData.cnpj}</p>
                                 <p>Email: {customerData.email}</p>
                                 <p>Tipo: {customerData.customerType}</p>
+                                <button onClick={handleLogout}>Logout</button>
                             </>
                         )}
                     </div>
                     <div className="customer-orders">
-                        <h2>PEDIDOS</h2>
+                        <h2 className="pedidos">PEDIDOS</h2>
                         {orderData && orderData.orders.map(order => (
                             <CollapsibleOrder key={order.orderId} order={order}/>
                         ))}
                     </div>
                 </div>
             )}
-
-            <button onClick={handleLogout}>Logout</button>
         </div>
     );
 }

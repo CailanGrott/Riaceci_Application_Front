@@ -9,6 +9,8 @@ import ProfilePage from "./pages/ProfilePage";
 import Login from "./pages/Login";
 import {AuthProvider} from "./pages/AuthContext";
 import Register from "./pages/Register";
+import RegisterEmployee from "./pages/RegisterEmployee";
+import RegisterProduct from "./pages/RegisterProduct";
 
 function App() {
     const [cart, setCart] = useState([]);
@@ -84,7 +86,9 @@ function App() {
             <AuthProvider>
                 <Routes>
                     <Route path="/" element={<Login/>} exact/>
+                    <Route path="/registerEmployee" element={<RegisterEmployee/>} exact/>
                     <Route path="/register" element={<Register/>} exact/>
+                    <Route path="/register-product" element={<RegisterProduct />} />
                     <Route path="/home" element={<HomePage/>}/>
                     <Route path="/products" element={<ProductsPage addToCart={addToCart}/>}/>
                     <Route path="/about" element={<AboutPage/>}/>
