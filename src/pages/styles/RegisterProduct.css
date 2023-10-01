@@ -1,0 +1,84 @@
+.register-product-title {
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #000;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 76.8px */
+    letter-spacing: -1.28px;
+}
+
+.register-product-title::after {
+    content: "";
+    display: block;
+    width: calc(100% - 165px); /* A largura do container menos a margem esquerda do título */
+    height: 1px;
+    background-color: #e6e6e6;
+    margin-top: 15px;
+}
+
+/* Estilo comum para todos os inputs */
+.input-product-name,
+.input-product-description,
+.input-product-price,
+.input-product-image {
+    padding: 10px;
+    margin: 10px 150px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    width: 38.4%;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Estilo para o botão de registro do produto */
+.button-register-product {
+    padding: 10px;
+    margin: 10px 150px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #C03333;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    width: 39.6%;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.button-register-product:hover {
+    background-color: #494949; /* Cor mais escura para o hover */
+}
+
+/* Estilo geral para a página de Registro */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+
+
+.register-form input,
+.register-form select,
+.register-form button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register-form button {
+    cursor: pointer;
+    background-color: #C03333;
+    color: #fff;
+}

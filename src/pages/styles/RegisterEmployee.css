@@ -1,0 +1,59 @@
+.register-employee-title {
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #000;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 76.8px */
+    letter-spacing: -1.28px;
+}
+
+.register-employee-title::after {
+    content: "";
+    display: block;
+    width: calc(100% - 165px); /* A largura do container menos a margem esquerda do título */
+    height: 1px;
+    background-color: #e6e6e6;
+    margin-top: 15px;
+}
+
+.input-employee-login,
+.input-employee-password,
+.select-employee-role{
+    padding: 10px;
+    margin: 10px 150px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    width: 38.4%;
+    font-size: 16px;
+    outline: none;
+}
+
+.select-employee-role{
+    width: 39.6%;
+}
+
+.button-register-employee {
+    padding: 10px;
+    margin: 10px 150px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #C03333; /* Color changed for distinction */
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    width: 39.6%;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.button-register-employee:hover {
+    background-color: #525252; /* Darker shade for hover */
+}

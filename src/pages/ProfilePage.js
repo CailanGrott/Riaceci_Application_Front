@@ -4,6 +4,7 @@ import CollapsibleOrder from "../CollapsibleOrder";
 import axios from "axios";
 import './styles/ProfilePage.css'
 import {useNavigate} from 'react-router-dom';
+import {AiFillDelete} from "react-icons/ai";
 
 const USER_ROLES = {
     ADMIN: "ADMIN",
@@ -63,6 +64,17 @@ function ProfilePage() {
         }
     };
 
+    const handleDeleteCustomer = async () => {
+        try {
+            await axios.delete(`http://localhost:8080/customer/delete-customer/cnpj/${cnpjSearch}`);
+            alert("Cliente excluído com sucesso!");
+            setCnpjSearch('');  // Limpar o input após exclusão.
+        } catch (error) {
+            console.error("Erro ao excluir cliente:", error);
+            alert("Erro ao excluir cliente. Verifique o CNPJ e tente novamente.");
+        }
+    };
+
     const handleSearchCustomer = async () => {
         try {
             const response = await axios.get(`http://localhost:8080/customer/find-by-cnpj/${cnpjSearch}`);
@@ -87,24 +99,25 @@ function ProfilePage() {
     return (
         <div>
             <h1 className="profile-title">Perfil</h1>
-            {role === USER_ROLES.ADMIN && (
-                <button onClick={() => navigate('/registerEmployee')}>Registrar Funcionário</button>
-            )}
             {(role === USER_ROLES.ADMIN || role === USER_ROLES.FUNCTIONARY) && (
                 <div>
-                    <input
-                        type="text"
-                        value={cnpjSearch}
-                        onChange={(e) => setCnpjSearch(e.target.value)}
-                        placeholder="Insira o CNPJ"
-                    />
-                    <button onClick={handleSearchOrder}>Buscar Pedido</button>
-                    <button onClick={handleSearchCustomer}>Buscar Cliente</button>
-                    <button onClick={handleLogout}>Logout</button>
-                    <button onClick={() => navigate('/register-product')}>Registrar Produto</button>
+                    <div className="input-button-container">
+                        <input className="find-customer"
+                               type="text"
+                               value={cnpjSearch}
+                               onChange={(e) => setCnpjSearch(e.target.value)}
+                               placeholder="Insira o CNPJ"
+                        />
+                        <AiFillDelete className="lixeira" size={24} onClick={handleDeleteCustomer}/> {/* Ícone de lixeira */}
+                        <button onClick={handleSearchOrder}>Buscar Pedido</button>
+                        <button onClick={handleSearchCustomer}>Buscar Cliente</button>
+                        <button onClick={() => navigate('/register-product')}>Registrar Produto</button>
+                        <button onClick={() => navigate('/registerEmployee')}>Registrar Funcionário</button>
+                        <button onClick={handleLogout}>Logout</button>
+                    </div>
 
                     {showData === 'order' && orderData && (
-                        <div>
+                        <div className="customer-info">
                             <h2>Pedido de {orderData.customerName}</h2>
                             {orderData.orders.map(order => (
                                 <CollapsibleOrder key={order.orderId} order={order}/>
@@ -113,9 +126,8 @@ function ProfilePage() {
                     )}
 
                     {showData === 'customer' && customerData && (
-                        <div>
+                        <div className="customer-info">
                             <h2>Informações do Cliente</h2>
-                            <p>ID: {customerData.id}</p>
                             <p>Nome: {customerData.name}</p>
                             <p>CNPJ: {customerData.cnpj}</p>
                             <p>Email: {customerData.email}</p>
@@ -127,21 +139,26 @@ function ProfilePage() {
 
             {role === USER_ROLES.CUSTOMER && (
                 <div className="customer-section">
-                    <div className="customer-data">
-                        <h2 className="meus-dados">Meus Dados</h2>
+                    <div
+                        className="customer-data blank-card"> {/* Aplicamos "blank-card" para aproveitar o mesmo estilo */}
+                        <h2 className="summary-title meus-dados">Meus
+                            Dados</h2> {/* "summary-title" para manter a consistência */}
                         {customerData && (
                             <>
                                 <p>CNPJ: {customerData.cnpj}</p>
                                 <p>Email: {customerData.email}</p>
                                 <p>Tipo: {customerData.customerType}</p>
-                                <button onClick={handleLogout}>Logout</button>
+                                <div className="button-container">
+                                    <button className="confirm-button" onClick={handleLogout}>Logout</button>
+                                </div>
                             </>
                         )}
                     </div>
-                    <div className="customer-orders">
-                        <h2 className="pedidos">PEDIDOS</h2>
+                    <div
+                        className="customer-orders cart-items-container"> {/* "cart-items-container" para manter a mesma estrutura */}
+                        <h2 className="summary-title pedidos">PEDIDOS</h2>
                         {orderData && orderData.orders.map(order => (
-                            <CollapsibleOrder key={order.orderId} order={order}/>
+                            <CollapsibleOrder key={order.orderId} order={order} className="order-card"/>
                         ))}
                     </div>
                 </div>

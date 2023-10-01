@@ -16,9 +16,10 @@ function Login() {
     };
 
     return (
-        <div className="login-container">
-            <div className="login-form">
+        <div className="container-register-customer"> {/* Similar className for consistency */}
+            <div className="login-form-customer"> {/* Similar className for consistency */}
                 <input
+                    className="input-customer"
                     type="text"
                     placeholder="Username"
                     onChange={(e) => {
@@ -27,6 +28,7 @@ function Login() {
                     }}
                 />
                 <input
+                    className="input-customer"
                     type="password"
                     placeholder="Password"
                     onChange={(e) => {
@@ -34,12 +36,14 @@ function Login() {
                         handleInputChange();
                     }}
                 />
-                <button onClick={() => handleLogin(login, password)}>
-                    ok
-                </button>
-                <button onClick={() => navigate('/register')}>
-                    Register
-                </button>
+                <div className="button-group"> {/* Div envolvendo os botões */}
+                    <button className="register-button login-button" onClick={() => handleLogin(login, password)}>
+                        Login
+                    </button>
+                    <button className="register-button" onClick={() => navigate('/register')}>
+                        Register
+                    </button>
+                </div>
             </div>
         </div>
     );

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
+import './styles/RegisterProduct.css';
 
 function RegisterProduct() {
     const [name, setName] = useState('');
@@ -28,32 +29,39 @@ function RegisterProduct() {
     };
 
     return (
-        <div>
+        <div className="register-product">
+            <h1 className='register-product-title'>Cadastrar novo produto</h1>
             <input
+                className="input-product-name"
                 type="text"
                 placeholder="Nome do Produto"
                 value={name}
                 onChange={e => setName(e.target.value)}
             />
             <input
+                className="input-product-description"
                 type="text"
                 placeholder="Descrição"
                 value={description}
                 onChange={e => setDescription(e.target.value)}
             />
             <input
+                className="input-product-price"
                 type="number"
                 placeholder="Preço"
                 value={price}
                 onChange={e => setPrice(e.target.value)}
             />
             <input
+                className="input-product-image"
                 type="text"
                 placeholder="URL da Imagem"
                 value={image}
                 onChange={e => setImage(e.target.value)}
             />
-            <button onClick={handleRegisterProduct}>Registrar Produto</button>
+            <button className="button-register-product" onClick={handleRegisterProduct}>
+                Registrar Produto
+            </button>
         </div>
     );
 }

@@ -1,33 +1,37 @@
-/* Estilo geral para a página de Registro */
-.register-container {
+.container-register-customer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #f5f5f5;
 }
 
-/* Estilo para o formulário de Registro */
-.register-form {
+.register-form-customer {
+    display: flex;
+    flex-direction: column;
     width: 400px;
+    height: 50%;
     padding: 20px;
     border: 1px solid #ccc;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.register-form input,
-.register-form select,
-.register-form button {
-    width: 100%;
+.input-customer, .register-button {
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    outline: none;
 }
 
-.register-form button {
+.register-button {
+    border: none;
     cursor: pointer;
-    background-color: #007BFF;
+    background-color: #C03333;
     color: #fff;
+    margin-top: 120px;
 }

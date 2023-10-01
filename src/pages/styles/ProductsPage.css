@@ -57,6 +57,7 @@
 
 .product-text {
     padding: 10px;
+    position: relative;
 }
 
 .product-name {
@@ -87,4 +88,11 @@
     50% {
         background-color: #dadada;
     }
+}
+
+.delete-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
 }

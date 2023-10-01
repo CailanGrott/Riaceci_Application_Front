@@ -43,12 +43,12 @@
 }
 
 .cart-items-container {
-    width: 57%; /* Ajustado para 60% para atingir a proporção desejada */
+    width: 57%;
     display: flex;
     flex-direction: column;
     margin-right: 33px;
     gap: 30px;
-    order: 1; /* Adicionado para definir a ordem de apresentação */
+    order: 1;
 }
 
 .cart-product-card {
@@ -56,7 +56,7 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #FAFAF5;
-    display: flex; /* Adicionado para facilitar o alinhamento dos itens */
+    display: flex;
 }
 
 .cart-product-image {

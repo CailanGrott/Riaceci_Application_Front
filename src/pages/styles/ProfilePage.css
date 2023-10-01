@@ -22,12 +22,25 @@
     margin-top: 15px;
 }
 
-/* Seção de Busca */
-input[type="text"] {
+
+.find-customer {
     padding: 10px;
+    margin: 10px 150px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    width: 38.4%;
+    font-size: 16px;
+    outline: none;
+    margin-right: 118px;
+}
+
+.customer-info{
+    padding: 10px;
+    margin: 10px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 button {
@@ -61,15 +74,7 @@ button:not(:last-child) {
     margin-right: 10px;
 }
 
-/* Estilo para a seção de pedidos do cliente */
-.orders-container {
-    width: 70%; /* Ocupa 70% da largura do container */
-    margin: 30px auto 0; /* Centraliza horizontalmente e dá uma margem em cima */
-    border: 1px solid #e6e6e6;
-    border-radius: 5px;
-    padding: 15px;
-    background-color: #FAFAF5; /* Uma cor de fundo suave */
-}
+
 
 .orders-container h2 {
     border-bottom: 1px solid #e6e6e6;
@@ -77,25 +82,47 @@ button:not(:last-child) {
 }
 
 .customer-section {
-    display: flex;
-    justify-content: space-between;
+    width: calc(100% - 180px);
+    position: relative;
     margin-left: 150px;
-    margin-right: 150px;
+    display: flex;
+    gap: 30px; /* Espaçamento entre os cards de dados e pedidos */
 }
 
-.customer-data {
-    width: 28%; /* 100% - 2% de espaçamento entre as divs */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 20px;
-    flex-shrink: 0; /* Isso evita que o customer-data diminua quando o customer-orders expandir */
-    height: 200px; /* Define uma altura mínima para o customer-data */
+.customer-data p {
+    font-size: 16px;
+    margin: 10px 40px;
+    font-family: 'Inter', sans-serif;
 }
 
-.customer-orders {
-    width: 70%; /* 100% - 2% de espaçamento entre as divs */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+.pedidos {
+    margin-top: 20px; /* Ajuste conforme necessário */
+}
+
+.order-card {
     padding: 20px;
-    flex-grow: 1; /* Isso permite que o customer-orders expanda conforme necessário */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #FAFAF5;
+    margin-bottom: 20px; /* Espaçamento entre cada pedido, ajuste conforme necessário */
+}
+
+.cart-product-card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #FAFAF5;
+    margin-bottom: 20px; /* Adicionado para espaço entre cada pedido. Ajuste se necessário. */
+    display: flex; /* Para estrutura flexível */
+}
+
+.input-button-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.lixeira{
+    margin-right: 10px;
+    cursor: pointer;
 }
