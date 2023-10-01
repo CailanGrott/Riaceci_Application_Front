@@ -16,7 +16,7 @@ export const AuthProvider = ({children}) => {
 
     const handleLogin = async (login, password) => {
         try {
-            const response = await axios.post('http://localhost:8080/auth/login', {login, password});
+            const response = await axios.post('http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/auth/login', {login, password});
             console.log(`login: ${login}`);
             console.log(`password: ${password}`);
             const statusCode = response.status;
@@ -62,7 +62,7 @@ export const AuthProvider = ({children}) => {
 
     const handleRegister = async (name, cnpj, email, password, customerType) => {
         try {
-            const response = await axios.post('http://localhost:8080/customer/new-customer', {
+            const response = await axios.post('http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/customer/new-customer', {
                 name,
                 cnpj,
                 email,
@@ -82,7 +82,7 @@ export const AuthProvider = ({children}) => {
 
     const handleRegisterEmployee = async (login, password, role) => {
         try {
-            const response = await axios.post('http://localhost:8080/auth/register', {
+            const response = await axios.post('http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/auth/register', {
                 login,
                 password,
                 role

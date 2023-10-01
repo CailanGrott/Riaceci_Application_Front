@@ -16,7 +16,7 @@ const ProductsPage = ({addToCart}) => {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        fetch('http://localhost:8080/products/find-products')
+        fetch('http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/products/find-products')
             .then(response => response.json())
             .then(data => setProducts(data));
     }, []);
@@ -24,7 +24,7 @@ const ProductsPage = ({addToCart}) => {
     const handleDeleteProduct = (e, productId) => {
         e.stopPropagation();
 
-        axios.delete(`http://localhost:8080/products/delete-product/id/${productId}`)
+        axios.delete(`http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/products/delete-product/id/${productId}`)
             .then(() => {
                 setProducts(products.filter(p => p.id !== productId));
             })

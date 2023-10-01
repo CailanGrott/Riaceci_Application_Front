@@ -17,7 +17,7 @@ function RegisterProduct() {
                 image
             };
 
-            const response = await axios.post('http://localhost:8080/products/new-product', productData);
+            const response = await axios.post('http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/products/new-product', productData);
 
             if (response.status === 201) {
                 alert('Produto registrado com sucesso!');

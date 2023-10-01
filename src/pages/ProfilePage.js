@@ -22,7 +22,7 @@ function ProfilePage() {
 
     const fetchCustomerOrders = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/orders/find-order-by-cnpj/${cnpj}`);
+            const response = await axios.get(`http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/orders/find-order-by-cnpj/${cnpj}`);
             if (response.data) {
                 setOrderData(response.data);
             } else {
@@ -35,7 +35,7 @@ function ProfilePage() {
 
     const fetchCustomerData = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/customer/find-by-cnpj/${cnpj}`);
+            const response = await axios.get(`http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/customer/find-by-cnpj/${cnpj}`);
             if (response.data) {
                 setCustomerData(response.data);
             } else {
@@ -52,7 +52,7 @@ function ProfilePage() {
 
     const handleSearchOrder = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/orders/find-order-by-cnpj/${cnpjSearch}`);
+            const response = await axios.get(`http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/orders/find-order-by-cnpj/${cnpjSearch}`);
             if (response.data) {
                 setOrderData(response.data);
                 setShowData('order');
@@ -66,7 +66,7 @@ function ProfilePage() {
 
     const handleDeleteCustomer = async () => {
         try {
-            await axios.delete(`http://localhost:8080/customer/delete-customer/cnpj/${cnpjSearch}`);
+            await axios.delete(`http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/customer/delete-customer/cnpj/${cnpjSearch}`);
             alert("Cliente excluído com sucesso!");
             setCnpjSearch('');  // Limpar o input após exclusão.
         } catch (error) {
@@ -77,7 +77,7 @@ function ProfilePage() {
 
     const handleSearchCustomer = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/customer/find-by-cnpj/${cnpjSearch}`);
+            const response = await axios.get(`http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/customer/find-by-cnpj/${cnpjSearch}`);
             if (response.data) {
                 setCustomerData(response.data);
                 setShowData('customer');

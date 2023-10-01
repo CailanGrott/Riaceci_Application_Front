@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ed6dd6e-38e8-4db0-819e-6472639807bf" name="Changes" comment="Ajustando funcionalidades e estilização">
-      <change afterPath="$PROJECT_DIR$/src/pages/styles/RegisterEmployee.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/styles/RegisterProduct.css" afterDir="false" />
+    <list default="true" id="6ed6dd6e-38e8-4db0-819e-6472639807bf" name="Changes" comment="Finalizando projeto">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AuthContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfilePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/RegisterEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegisterEmployee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/RegisterProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RegisterProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/styles/CartPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/styles/CartPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/styles/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/styles/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/styles/ProductsPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/styles/ProductsPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/styles/ProfilePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/styles/ProfilePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/styles/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/styles/Register.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,27 +62,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/caila/WebstormProjects/TCC-FRONT",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "ts.external.directory.path": "C:\\Program Files (x86)\\JetBrains\\WebStorm 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/caila/WebstormProjects/TCC-FRONT&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files (x86)\\JetBrains\\WebStorm 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -175,7 +161,8 @@
       <workItem from="1695768474230" duration="732000" />
       <workItem from="1695856399179" duration="5917000" />
       <workItem from="1695951661900" duration="538000" />
-      <workItem from="1696082540354" duration="23206000" />
+      <workItem from="1696082540354" duration="23571000" />
+      <workItem from="1696128866989" duration="618000" />
     </task>
     <task id="LOCAL-00001" summary="Adicionando front">
       <option name="closed" value="true" />
@@ -249,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695951391285</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finalizando projeto">
+      <option name="closed" value="true" />
+      <created>1696126798300</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696126798300</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +263,7 @@
     <MESSAGE value="Finalizando CartPage" />
     <MESSAGE value="Começando login" />
     <MESSAGE value="Ajustando funcionalidades e estilização" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajustando funcionalidades e estilização" />
+    <MESSAGE value="Finalizando projeto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizando projeto" />
   </component>
 </project>

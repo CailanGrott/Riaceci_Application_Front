@@ -22,7 +22,7 @@ function CartPage({cart, removeFromCart, updateProductQuantity, clearCart}) {
                 products,
             };
 
-            const response = await axios.post('http://localhost:8080/orders/new-order', orderData);
+            const response = await axios.post('http://riaceci-application-env.eba-matirrr2.sa-east-1.elasticbeanstalk.com/orders/new-order', orderData);
 
             if (response.status === 201) {
                 console.log('Pedido criado com sucesso');
