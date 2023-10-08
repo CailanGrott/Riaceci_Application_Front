@@ -1,5 +1,5 @@
 import { useAuth } from "./AuthContext";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import './styles/Login.css';
 import {useNavigate} from "react-router-dom";
 
@@ -10,6 +10,12 @@ function Login() {
     const [errorMessage, setErrorMessage] = useState('');
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            navigate('/home')
+        }
+    })
 
     const handleInputChange = () => {
         setErrorMessage('');
